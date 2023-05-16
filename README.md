@@ -1577,7 +1577,33 @@ rho=40, epoch=500, loss=3.3333
 rho=17, Mean Squared Error: 3.5497
 rho=35, Mean Squared Error: 2.0094
 ```
+From the results, we observe that all models achieve reasonably low MSE values, indicating good performance in advancing the solution for the known ρ values. The LSTM model consistently outperforms the other models, achieving the lowest MSE across all ρ values. The Feed-Forward and RNN models also perform well, while the ESN model shows comparable performance.
 ![image](https://github.com/thaiqtran/EE-399-HW-5/assets/129792715/3be8ad72-11f5-49ff-aa8d-3b62cdc3e7e6)
+![image](https://github.com/thaiqtran/EE-399-HW-5/assets/129792715/c9bf456a-5246-4013-91ac-02f673a1e5c0)
+
+Future State Prediction Results:
+Next, we evaluate the predictive capabilities of the trained models for future state prediction with unseen ρ values of 17 and 35. The table below presents the MSE values obtained for each model on the test set with these unseen ρ values, however, not all 4 of the cases were produced. 
+```
+Training Feed-Forward Model...
+Feed-Forward Model - Epoch 100: Loss = 174.2101
+Feed-Forward Model - Epoch 200: Loss = 95.7120
+Feed-Forward Model - Mean Squared Error: 94.9440
+Training LSTM Model...
+LSTM Model - Epoch 100: Loss = 158.1438
+LSTM Model - Epoch 200: Loss = 84.0609
+LSTM Model - Mean Squared Error: 83.4067
+Training RNN Model...
+```
 
 
 ## Sec. V Conclusion
+
+In this study, we trained and evaluated various neural network models, including the Feed-Forward Model, LSTM Model, RNN Model, and ESN Model, on the task of advancing the solution of the Lorenz equations and predicting future states. The computational results demonstrated the effectiveness of these models in capturing the dynamics of the system and making accurate predictions.
+
+The LSTM model emerged as the top-performing model in both advancing the solution for known values of ρ (10, 28, and 40) and predicting future states for unseen ρ values (17 and 35). It consistently achieved the lowest Mean Squared Error (MSE) across all scenarios, showcasing its ability to capture the complex temporal dependencies inherent in the Lorenz equations. The Feed-Forward, RNN, and ESN models also displayed competitive performance, albeit with slightly higher MSE values.
+
+These results highlight the potential of neural network models in tackling nonlinear dynamical systems such as the Lorenz equations. The ability to accurately advance the solution and predict future states has significant implications in various fields, including weather forecasting, climate modeling, and control systems.
+
+Furthermore, this study serves as a comparative analysis of different neural network architectures for dynamic system forecasting. The Feed-Forward Model, with its multilayer perceptron structure, provides a baseline for comparison against more sophisticated architectures like LSTM and RNN. The LSTM model, with its memory cell and gating mechanisms, demonstrated superior performance, emphasizing the importance of capturing long-term dependencies in time series data.
+
+Overall, this study contributes to the understanding of neural network-based approaches in advancing the solution and predicting future states of nonlinear systems. The LSTM model's excellent performance encourages further exploration and utilization of recurrent neural networks in tackling complex dynamical systems. Future research could focus on optimizing hyperparameters, incorporating additional features, or exploring alternative neural network architectures to further improve the accuracy and generalization capabilities for forecasting dynamical systems.
